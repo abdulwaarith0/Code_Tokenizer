@@ -24,8 +24,10 @@ pub enum TokenKind {
     If,
     Else,
     Return,
+
 }
 
+// Display the token kind
 impl Display for TokenKind {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -50,3 +52,14 @@ impl Display for TokenKind {
     }
 }
 
+// Lookup the identifier in the token kind
+pub fn lookup_ident(ident: String) -> TokenKind {
+    match ident.as_str() {
+        "fn" => TokenKind::Function,
+        "let" => TokenKind::Let,
+        "if" => TokenKind::If,
+        "else" => TokenKind::Else,
+        "return" => TokenKind::Return,
+        _ => TokenKind::Ident,
+    }
+}

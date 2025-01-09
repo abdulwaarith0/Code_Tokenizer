@@ -37,7 +37,7 @@ impl Lexer {
     }
 
     // Read the next token in the input
-    fn next_token(&mut self) -> Token {
+    pub fn next_token(&mut self) -> Token {
         // Skip the whitespace
         self.skip_whitespace();
         // Create a new token with the current character
